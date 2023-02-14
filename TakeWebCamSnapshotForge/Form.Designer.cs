@@ -62,7 +62,7 @@
             this.actionPanel.Location = new System.Drawing.Point(0, 0);
             this.actionPanel.Name = "actionPanel";
             this.actionPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.actionPanel.Size = new System.Drawing.Size(286, 206);
+            this.actionPanel.Size = new System.Drawing.Size(286, 263);
             this.actionPanel.TabIndex = 1;
             // 
             // button
@@ -91,7 +91,7 @@
             // 
             this.listBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(10, 88);
+            this.listBox.Location = new System.Drawing.Point(10, 145);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(266, 108);
             this.listBox.TabIndex = 2;

@@ -24,14 +24,21 @@ namespace TakeWebCamSnapshotForge
             // Получить список доступных камер
             var videoDevices = new FilterInfoCollection( FilterCategory.VideoInputDevice );
 
+            listBox.DisplayMember = "Name";
+
             foreach ( FilterInfo item in videoDevices )
-                listBox.Items.Add( item.Name );
+                listBox.Items.Add( item );
 
-            // Выбрать первую камеру из списка
-            videoSource = new VideoCaptureDevice( videoDevices[0].MonikerString );
+            if ( listBox.Items.Count > 0 )
+            {
+                listBox.SelectedIndex = 0;
 
-            // Запустить камеру
-            videoSource.Start();
+                var filterInfo = ( FilterInfo )listBox.SelectedItem;
+                videoSource = new VideoCaptureDevice( filterInfo.MonikerString );
+
+                // Запустить камеру
+                videoSource.Start();
+            }
 
             // Получить текущий кадр с камеры
             var controlPlayer = new VideoSourcePlayer { VideoSource = videoSource, Dock = DockStyle.Fill };
