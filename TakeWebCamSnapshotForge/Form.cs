@@ -10,17 +10,22 @@ namespace TakeWebCamSnapshotForge
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        private bool frameReceived;
+
+        private VideoCaptureDevice videoSource;
+
         public Form()
         {
             InitializeComponent();
         }
 
-        private VideoCaptureDevice videoSource;
-
         private void Form_Load( object sender, EventArgs e )
         {
             // Получить список доступных камер
-            FilterInfoCollection videoDevices = new FilterInfoCollection( FilterCategory.VideoInputDevice );
+            var videoDevices = new FilterInfoCollection( FilterCategory.VideoInputDevice );
+
+            foreach ( FilterInfo item in videoDevices )
+                listBox.Items.Add( item.Name );
 
             // Выбрать первую камеру из списка
             videoSource = new VideoCaptureDevice( videoDevices[0].MonikerString );
@@ -37,8 +42,6 @@ namespace TakeWebCamSnapshotForge
         {
             videoSource.Stop();
         }
-
-        private bool frameReceived = false;
 
         private void button_Click( object sender, EventArgs e )
         {
