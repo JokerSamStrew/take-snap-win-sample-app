@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using AForge.Controls;
+using AForge.Video;
 using AForge.Video.DirectShow;
 
 namespace TakeWebCamSnapshotForge
@@ -27,12 +30,31 @@ namespace TakeWebCamSnapshotForge
 
             // Получить текущий кадр с камеры
             var controlPlayer = new VideoSourcePlayer { VideoSource = videoSource, Dock = DockStyle.Fill };
-            Controls.Add( controlPlayer );
+            splitContainer.Panel2.Controls.Add( controlPlayer );
         }
 
         private void Form_FormClosed( object sender, FormClosedEventArgs e )
         {
             videoSource.Stop();
+        }
+
+        private bool frameReceived = false;
+
+        private void button_Click( object sender, EventArgs e )
+        {
+            frameReceived = false;
+            videoSource.NewFrame += GetSnap;
+            while ( !frameReceived ) Thread.Sleep( 200 );
+            videoSource.NewFrame -= GetSnap;
+        }
+
+        private void GetSnap( object sender, NewFrameEventArgs eventargs )
+        {
+            if ( frameReceived )
+                return;
+
+            panel.BackgroundImage = ( Image )eventargs.Frame.Clone();
+            frameReceived = true;
         }
     }
 }
