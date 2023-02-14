@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TakeWebCamSnapshotVLC", "TakeWebCamSnapshot\TakeWebCamSnapshotVLC.csproj", "{6619957E-7CD2-4234-A5B2-80E18C6ED30F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TakeWebCamSnapshotForge", "TakeWebCamSnapshotForge\TakeWebCamSnapshotForge.csproj", "{20693354-BE1E-4428-91C1-F4277008FB84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6619957E-7CD2-4234-A5B2-80E18C6ED30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6619957E-7CD2-4234-A5B2-80E18C6ED30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6619957E-7CD2-4234-A5B2-80E18C6ED30F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20693354-BE1E-4428-91C1-F4277008FB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20693354-BE1E-4428-91C1-F4277008FB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20693354-BE1E-4428-91C1-F4277008FB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20693354-BE1E-4428-91C1-F4277008FB84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
