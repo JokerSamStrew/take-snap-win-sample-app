@@ -12,26 +12,25 @@ namespace TakeWebCamSnapshotVLC
         public Form()
         {
             InitializeComponent();
-        }
-
-        private MediaPlayer CreateMediaPlayer()
-        {
-            var _libVLC = new LibVLC();
-
-            _libVLC.SetDialogHandlers( ( _, _ ) => Task.CompletedTask,
+            _libVlc.SetDialogHandlers( ( _, _ ) => Task.CompletedTask,
                 ( _, _, _, _, _, _ ) => Task.CompletedTask,
                 ( _, _, _, _, _, _, _, _ ) => Task.CompletedTask,
                 ( _, _, _, _, _, _, _ ) => Task.CompletedTask,
                 ( _, _, _ ) => Task.CompletedTask );
+        }
 
-            var media = new Media( _libVLC, "dshow//:", FromType.FromLocation );
+        private readonly LibVLC _libVlc = new();
+
+        private MediaPlayer CreateMediaPlayer()
+        {
+            var media = new Media( _libVlc, "dshow//:", FromType.FromLocation );
             media.AddOption( ":live-caching=0" );
             media.AddOption( ":no-audio" );
             media.AddOption( ":dshow-fps=30" );
             media.AddOption( ":dshow-adev=none" );
             media.AddOption( ":no-dshow-config" );
             media.AddOption( ":no-dshow-tuner" );
-            var _mp = new MediaPlayer( _libVLC )
+            var _mp = new MediaPlayer( _libVlc )
             {
                 Media = media
             };
