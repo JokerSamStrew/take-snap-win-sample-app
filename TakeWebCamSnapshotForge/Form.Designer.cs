@@ -37,6 +37,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Form";
             this.Text = "TakeWebCamSnapshot - AForge";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
 
         }
