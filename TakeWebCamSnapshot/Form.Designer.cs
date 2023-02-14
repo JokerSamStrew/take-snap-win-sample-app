@@ -33,8 +33,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox = new System.Windows.Forms.TextBox();
+            this.listBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.videoView)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -51,7 +52,7 @@
             this.videoView.Location = new System.Drawing.Point(0, 0);
             this.videoView.MediaPlayer = null;
             this.videoView.Name = "videoView";
-            this.videoView.Size = new System.Drawing.Size(527, 714);
+            this.videoView.Size = new System.Drawing.Size(782, 572);
             this.videoView.TabIndex = 0;
             this.videoView.Text = "videoView";
             // 
@@ -69,9 +70,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 692);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 550);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(796, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1178, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -94,9 +95,22 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.videoView);
-            this.splitContainer1.Size = new System.Drawing.Size(796, 714);
-            this.splitContainer1.SplitterDistance = 265;
+            this.splitContainer1.Size = new System.Drawing.Size(1178, 572);
+            this.splitContainer1.SplitterDistance = 392;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.listBox);
+            this.panel1.Controls.Add(this.button);
+            this.panel1.Controls.Add(this.textBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(382, 458);
+            this.panel1.TabIndex = 5;
             // 
             // textBox
             // 
@@ -104,26 +118,23 @@
             this.textBox.Location = new System.Drawing.Point(5, 5);
             this.textBox.Margin = new System.Windows.Forms.Padding(30);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(245, 20);
+            this.textBox.Size = new System.Drawing.Size(372, 20);
             this.textBox.TabIndex = 3;
             // 
-            // panel1
+            // listBox
             // 
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Controls.Add(this.button);
-            this.panel1.Controls.Add(this.textBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(255, 257);
-            this.panel1.TabIndex = 5;
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(5, 98);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(372, 355);
+            this.listBox.TabIndex = 4;
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 714);
+            this.ClientSize = new System.Drawing.Size(1178, 572);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form";
@@ -153,6 +164,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox listBox;
     }
 }
 
