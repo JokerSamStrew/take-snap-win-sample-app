@@ -9,6 +9,8 @@ namespace TakeWebCamSnapshotVLC
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        private readonly LibVLC _libVlc = new();
+
         public Form()
         {
             InitializeComponent();
@@ -18,8 +20,6 @@ namespace TakeWebCamSnapshotVLC
                 ( _, _, _, _, _, _, _ ) => Task.CompletedTask,
                 ( _, _, _ ) => Task.CompletedTask );
         }
-
-        private readonly LibVLC _libVlc = new();
 
         private MediaPlayer CreateMediaPlayer()
         {

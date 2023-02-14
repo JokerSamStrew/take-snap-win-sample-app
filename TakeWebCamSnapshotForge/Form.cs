@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-using AForge.Controls;
 using AForge.Video;
 using AForge.Video.DirectShow;
 
@@ -33,17 +32,16 @@ namespace TakeWebCamSnapshotForge
             {
                 listBox.SelectedIndex = 0;
 
-                var filterInfo = ( FilterInfo )listBox.SelectedItem;
-                videoSource = new VideoCaptureDevice( filterInfo.MonikerString );
+                videoSource = new VideoCaptureDevice( SelectedFilterInfo.MonikerString );
 
                 // Запустить камеру
                 videoSource.Start();
             }
 
-            // Получить текущий кадр с камеры
-            var controlPlayer = new VideoSourcePlayer { VideoSource = videoSource, Dock = DockStyle.Fill };
-            splitContainer.Panel2.Controls.Add( controlPlayer );
+            videoSourcePlayer.VideoSource = videoSource;
         }
+
+        private FilterInfo SelectedFilterInfo => ( FilterInfo )listBox.SelectedItem;
 
         private void Form_FormClosed( object sender, FormClosedEventArgs e )
         {
@@ -65,6 +63,15 @@ namespace TakeWebCamSnapshotForge
 
             panel.BackgroundImage = ( Image )eventargs.Frame.Clone();
             frameReceived = true;
+        }
+
+        private void applyButton_Click( object sender, EventArgs e )
+        {
+            if ( SelectedFilterInfo.MonikerString == videoSource.Source ) return;
+
+            videoSource.Stop();
+            videoSource.Source = SelectedFilterInfo.MonikerString;
+            videoSource.Start();
         }
     }
 }
