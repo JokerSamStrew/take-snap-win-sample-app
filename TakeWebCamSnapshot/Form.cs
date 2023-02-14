@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibVLCSharp.Shared;
 
-namespace TakeWebCamSnapshot
+namespace TakeWebCamSnapshotVLC
 {
     public partial class Form : System.Windows.Forms.Form
     {

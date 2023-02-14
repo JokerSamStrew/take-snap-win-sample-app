@@ -1,4 +1,4 @@
-﻿namespace TakeWebCamSnapshot
+﻿namespace TakeWebCamSnapshotVLC
 {
     partial class Form
     {
@@ -115,7 +115,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form";
-            this.Text = "TakeWebCamSnap";
+            this.Text = "TakeWebCamSnap - VLCSharpLib";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.videoView)).EndInit();

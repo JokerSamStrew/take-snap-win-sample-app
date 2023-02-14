@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6619957E-7CD2-4234-A5B2-80E18C6ED30F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TakeWebCamSnapshot</RootNamespace>
-    <AssemblyName>TakeWebCamSnapshot</AssemblyName>
+    <RootNamespace>TakeWebCamSnapshotVLC</RootNamespace>
+    <AssemblyName>TakeWebCamSnapshotVLC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -111,6 +111,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
